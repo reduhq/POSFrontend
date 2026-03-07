@@ -20,9 +20,9 @@ export default function LoginPage() {
         </div>
 
         {/* Login Card */}
-        <div className="w-full max-w-[440px] bg-white dark:bg-slate-900 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 p-8 md:p-10 z-10">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Welcome back</h2>
+        <div className="w-full max-w-[440px] bg-white dark:bg-slate-900 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 p-6 sm:p-8 md:p-10 z-10 mx-4">
+          <div className="mb-6 md:mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">Welcome back</h2>
             <p className="text-slate-500 dark:text-slate-400 text-sm">Please enter your details to access your dashboard.</p>
           </div>
 

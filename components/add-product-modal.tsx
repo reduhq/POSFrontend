@@ -14,7 +14,7 @@ export function AddProductModal({ isOpen, onClose }: AddProductModalProps) {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
             {/* Modal Card */}
             <div
-                className="bg-white dark:bg-slate-900 w-full max-w-4xl rounded-xl shadow-2xl overflow-hidden flex flex-col"
+                className="bg-white dark:bg-slate-900 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl shadow-2xl flex flex-col mx-2 sm:mx-0"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Modal Header */}
@@ -88,7 +88,7 @@ export function AddProductModal({ isOpen, onClose }: AddProductModalProps) {
                             </div>
 
                             {/* Price and Stock Row */}
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <label className="text-sm font-semibold text-slate-700 dark:text-slate-300" htmlFor="price">Price</label>
                                     <div className="relative">
@@ -127,11 +127,11 @@ export function AddProductModal({ isOpen, onClose }: AddProductModalProps) {
                 </div>
 
                 {/* Modal Footer */}
-                <div className="px-8 py-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-row items-center justify-end gap-6">
-                    <button onClick={onClose} className="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-medium transition-colors text-sm">
+                <div className="px-6 py-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col-reverse sm:flex-row items-center justify-end gap-4 sm:gap-6 mt-auto">
+                    <button onClick={onClose} className="w-full sm:w-auto text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-medium transition-colors text-sm py-2">
                         Cancel and exit
                     </button>
-                    <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all shadow-lg shadow-primary/20">
+                    <button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20">
                         <span className="material-symbols-outlined text-sm">check_circle</span>
                         Save Product
                     </button>

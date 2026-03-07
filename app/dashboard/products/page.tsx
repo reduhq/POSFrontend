@@ -95,10 +95,10 @@ export default function ProductsPage() {
                     </div>
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="bg-primary text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all flex items-center gap-2"
+                        className="bg-primary text-white p-2.5 sm:px-6 sm:py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
                     >
-                        <span className="material-symbols-outlined text-lg">add</span>
-                        Add Product
+                        <span className="material-symbols-outlined text-xl sm:text-lg">add</span>
+                        <span className="hidden sm:inline">Add Product</span>
                     </button>
                 </div>
             </header>
@@ -167,17 +167,17 @@ export default function ProductsPage() {
             </section>
 
             {/* Pagination/Footer Stats */}
-            <footer className="px-8 py-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
-                <p className="text-sm text-slate-500">Showing <span className="font-bold text-slate-900 dark:text-white">7</span> of <span className="font-bold text-slate-900 dark:text-white">124</span> products</p>
-                <div className="flex items-center gap-2">
+            <footer className="px-8 py-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p className="text-sm text-slate-500 text-center sm:text-left">Showing <span className="font-bold text-slate-900 dark:text-white">7</span> of <span className="font-bold text-slate-900 dark:text-white">124</span> products</p>
+                <div className="flex items-center justify-center gap-1 sm:gap-2 flex-wrap">
                     <button className="p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-colors flex">
                         <span className="material-symbols-outlined text-xl">chevron_left</span>
                     </button>
                     <button className="w-8 h-8 rounded-lg bg-primary text-white text-sm font-bold flex items-center justify-center">1</button>
                     <button className="w-8 h-8 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors text-sm font-bold flex items-center justify-center">2</button>
-                    <button className="w-8 h-8 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors text-sm font-bold flex items-center justify-center">3</button>
+                    <button className="hidden sm:flex w-8 h-8 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors text-sm font-bold items-center justify-center">3</button>
                     <span className="text-slate-400 mx-1">...</span>
-                    <button className="w-8 h-8 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors text-sm font-bold flex items-center justify-center">18</button>
+                    <button className="hidden sm:flex w-8 h-8 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors text-sm font-bold items-center justify-center">18</button>
                     <button className="p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-colors flex">
                         <span className="material-symbols-outlined text-xl">chevron_right</span>
                     </button>
