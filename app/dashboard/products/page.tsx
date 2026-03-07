@@ -2,9 +2,12 @@
 
 import { useState } from "react"
 import { AddProductModal } from "@/components/add-product-modal"
+import { EditProductModal } from "@/components/edit-product-modal"
 
 export default function ProductsPage() {
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false)
+    const [editingProduct, setEditingProduct] = useState<any>(null)
     const products = [
         {
             id: 1,
@@ -131,7 +134,10 @@ export default function ProductsPage() {
                                     style={{ backgroundImage: `url('${product.image}')` }}
                                 ></div>
                                 <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <button className="p-2 bg-white/90 backdrop-blur rounded-full text-slate-700 hover:text-primary hover:bg-white shadow-lg transition-colors flex">
+                                    <button
+                                        onClick={() => { setEditingProduct(product); setIsEditModalOpen(true); }}
+                                        className="p-2 bg-white/90 backdrop-blur rounded-full text-slate-700 hover:text-primary hover:bg-white shadow-lg transition-colors flex"
+                                    >
                                         <span className="material-symbols-outlined text-lg">edit</span>
                                     </button>
                                     <button className="p-2 bg-white/90 backdrop-blur rounded-full text-slate-700 hover:text-red-500 hover:bg-white shadow-lg transition-colors flex">
@@ -186,6 +192,11 @@ export default function ProductsPage() {
             <AddProductModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
+            />
+            <EditProductModal
+                isOpen={isEditModalOpen}
+                onClose={() => setIsEditModalOpen(false)}
+                product={editingProduct}
             />
         </>
     )
