@@ -12,183 +12,237 @@ export default function ProductsPage() {
         {
             id: 1,
             name: "SoundWave X1 Wireless",
+            sku: "SW-X1-W",
             category: "Electronics",
             price: "$299.00",
-            status: "IN STOCK",
-            statusColor: "bg-green-100 text-green-600",
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBPPj_yUYMNT3eiiDbu6yaLudRJESfxRQBWMl7cRhkt8YjpBkCIvWZm39D_8Xj_TtjGagFLtYjnMhl74OIhZa_JwkPqHfzCvjAdHOkzW_dhaxxXIXy8m5IEdMVxJS378twtL9zZIU6mHNf8oJT5U4G5OLfDjCiy1JO_mFswNifU0qe4Vi7M1csjFdjVJYlPcnhjQugIkDPfy0nIUVx6TYa09X-JntwXa2uFMhJwhLPGlvDIMdL2vjWovD4TLV_Qc6yAVPVARqMnSOo"
+            stock: 82,
+            stockPercentage: 82,
+            status: "Active",
+            statusColor: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
         },
         {
             id: 2,
             name: "Nordic Classic Watch",
+            sku: "NCW-01",
             category: "Accessories",
             price: "$185.00",
-            status: "LOW STOCK",
-            statusColor: "bg-amber-100 text-amber-600",
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC7I_PI-ykXffcCU5StrXfAyKAthebcLEUInFaR6w9_rzig9AC721c4JObOi_6LUnkV0QgpfSXkSNSx9Yvl6TT8o9l7DUfja8I0XXTqNcxKJOtOjzncNbS0MT4O_IjVubFM5_P2XdBBO-hFI5ifLb7hL0XJ8E18ytK5XDQhyX6rJR_UgoqyKs2WS4HDhxcyo9xgaLQHo5PVleR9urf6oHWzX9CQmcb57NLkmj3S8IUZi80dehBkkuAEkH_x4IC8ozC9S0PRwyGE5HM"
+            stock: 12,
+            stockPercentage: 12,
+            status: "Low Stock",
+            statusColor: "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
         },
         {
             id: 3,
             name: "Lumix Retro Pro Cam",
+            sku: "LUM-RP-01",
             category: "Electronics",
             price: "$1,249.00",
-            status: "IN STOCK",
-            statusColor: "bg-green-100 text-green-600",
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCULNwgqKxGPOw1Bf8_TXLK2XuL3RpKoxg6XL656Jk8mOZevNS7n9Akg48l_nHs9OxkriboASdR9WhI3OFfRpPz8rHoVjDZonf9PRA0A2Ktm0aZ5AKjZ-lDBPpat5j85_2ENs1n12RxJjDbwAMWCdIMPdnAViAmRULyjfHxGE-MthXNnH1S2CY4O6YJMSZAumualmQ60Bmc8G9GXQOnLWsPslmBXtSgIpN0mZhDEpNbI4-aY9K3p865a0JwV_eMkX6nd9ymgWWRrbc"
+            stock: 45,
+            stockPercentage: 45,
+            status: "Active",
+            statusColor: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
         },
         {
             id: 4,
             name: "Velocity Rush Runners",
+            sku: "VRR-01",
             category: "Apparel",
             price: "$120.00",
-            status: "OUT OF STOCK",
-            statusColor: "bg-red-100 text-red-600",
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB_DCW_yKKTq-L8wTHuGaPKA7kLNLLu6dQQYnDGQjkkUzqemvb65S-V9Puw6oRfi7YcliTN87tcrjHpoCkbkbb-ObUBjVJpRwuE7GGtvDeUUYSNqwTZP3CO2m-Th4g3Gv5T6z8Yax78ACtLeFeWR2oFEuANQ_eAHI-x35i4LB8Z1RL3koslls-bHZFofnYCMRch_rDiC7F6LPXj3FTUijPjgpvrO25ZCU4fbICazhfwDibvx43L2L8ohhSofuLJty47sQlXKOomZn0"
+            stock: 0,
+            stockPercentage: 0,
+            status: "Inactive",
+            statusColor: "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400"
         },
         {
             id: 5,
             name: "Essential Pima Cotton Tee",
+            sku: "EPC-T-01",
             category: "Apparel",
             price: "$45.00",
-            status: "IN STOCK",
-            statusColor: "bg-green-100 text-green-600",
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCAQZaN1wWMlokgbFpEh9dRz7AIGot4P7GA_CM5Hoq0soHLRjgGUWINDV1yxopSPrURq_uBFW_ELzm7-mPm0CAQH_y0Un7-E7Wc2erwctyEVGn7oljZiloA5CpTv2rP6Swe4t3RMB8UFRK95wfT-dV9gbpA1ueY71GUQg0lQuImd8qqa-uuUTFBI2L-_CdFJDeAwiQyrVnJasTB5nrlxHVFMlbQ6RNFl-hKr6iQ9l4ayGe-YuD635LcrqbO0AEICE7SRvts0H1AcpA"
+            stock: 145,
+            stockPercentage: 100,
+            status: "Active",
+            statusColor: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
         },
         {
             id: 6,
             name: "Instant Focus Lens 50mm",
+            sku: "IFL-50-01",
             category: "Electronics",
             price: "$89.00",
-            status: "IN STOCK",
-            statusColor: "bg-green-100 text-green-600",
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDNLlY1un-HAMXTjK_OPIvU9oYrd4JVU5H4YSVi_245c2SjMm1pVNeFWUArYhlJuylBNIr53tJlDpD3w70GEqEexEdUFQb2_3rItVKR8D4ijEbUBrCiMdKX0U8-pjAj39ZuJsF_UItKbocE6Pv7gIE7xFWTdwhBJvxguBGGPAdD2cxYNsHXl58sTyO63RluKTYLHZ1H1VPoqMyJk2HoXDpOBx16whl7uhOxJBWXNmhESq40hravJPEQMYOTcGZksyapYW2gA7ZA0us"
+            stock: 34,
+            stockPercentage: 34,
+            status: "Active",
+            statusColor: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
         },
         {
             id: 7,
             name: "Artisan Leather Tote",
+            sku: "ALT-01",
             category: "Accessories",
             price: "$320.00",
-            status: "IN STOCK",
-            statusColor: "bg-green-100 text-green-600",
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDfQ1A3QDWE97YEe1ZI6BuqFX51qSuGZaBxQaq99ShfKtvI_tV-PlBrlMS9H7_uVQgxo-jJP66pd4eSuaOWIBa-n_dPj2wQdVilBfERoAbUFbedtpv1ebasmms9SjbNXVqsBQiWND8FhnE0cBdgDDofxu4wLOhq3s-iFKwR5sy1Xh-FN2BdKrdQMB3X3H1eKYrSXd39E-NHOeRVF7i7ucisF_OPrsLk9OTlkAmyc4YRwVY8-yQ2lQECifyfU0eE-3OCGVM6vwiuoMY"
+            stock: 5,
+            stockPercentage: 5,
+            status: "Low Stock",
+            statusColor: "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
         }
     ]
 
     return (
-        <>
-            {/* Top Header */}
-            <header className="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-8 py-6 flex flex-col gap-4 sm:flex-row sm:items-center justify-between">
-                <div>
-                    <div className="flex items-center gap-2 text-sm text-slate-500 mb-1">
-                        <span>Dashboard</span>
-                        <span className="material-symbols-outlined text-xs">chevron_right</span>
-                        <span className="text-primary font-medium">Products</span>
+        <div className="flex-1 px-6 py-8 md:px-12 bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100">
+            <div className="mx-auto max-w-7xl">
+                {/* Header Section */}
+                <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Products</h1>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">Manage your inventory, pricing, and availability.</p>
                     </div>
-                    <h2 className="text-3xl font-extrabold tracking-tight">Products</h2>
-                </div>
-
-                <div className="flex items-center gap-4">
-                    <div className="relative hidden lg:block">
-                        <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
-                        <input
-                            type="text"
-                            placeholder="Search products..."
-                            className="pl-10 pr-4 py-2.5 w-64 bg-white dark:bg-slate-800 border-none outline-none rounded-xl focus:ring-2 focus:ring-primary/50 text-sm shadow-sm"
-                        />
-                    </div>
-                    <button
+                    <button 
                         onClick={() => setIsModalOpen(true)}
-                        className="bg-primary text-white p-2.5 sm:px-6 sm:py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+                        className="flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all"
                     >
-                        <span className="material-symbols-outlined text-xl sm:text-lg">add</span>
-                        <span className="hidden sm:inline">Add Product</span>
+                        <span className="material-symbols-outlined text-sm">add</span>
+                        Add Product
                     </button>
                 </div>
-            </header>
 
-            {/* Filters & Category Chips */}
-            <section className="px-8 mb-8 overflow-x-auto">
-                <div className="flex items-center gap-3 min-w-max pb-2">
-                    <button className="px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-md">All Products</button>
-                    <button className="px-5 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm">Electronics</button>
-                    <button className="px-5 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm">Apparel</button>
-                    <button className="px-5 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm">Accessories</button>
-                    <button className="px-5 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm">Home Decor</button>
-                    <div className="h-6 w-px bg-slate-300 dark:bg-slate-700 mx-2"></div>
-                    <button className="flex items-center gap-1 text-slate-500 hover:text-primary transition-colors text-sm font-medium">
-                        <span className="material-symbols-outlined text-lg">tune</span>
-                        More Filters
-                    </button>
-                </div>
-            </section>
-
-            {/* Product Grid */}
-            <section className="px-8 pb-12">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-                    {products.map((product) => (
-                        <div key={product.id} className="group relative bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20">
-                            <div className="aspect-square w-full rounded-lg bg-slate-100 dark:bg-slate-800 mb-4 overflow-hidden relative">
-                                <div
-                                    className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110"
-                                    style={{ backgroundImage: `url('${product.image}')` }}
-                                ></div>
-                                <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <button
-                                        onClick={() => { setEditingProduct(product); setIsEditModalOpen(true); }}
-                                        className="p-2 bg-white/90 backdrop-blur rounded-full text-slate-700 hover:text-primary hover:bg-white shadow-lg transition-colors flex"
-                                    >
-                                        <span className="material-symbols-outlined text-lg">edit</span>
-                                    </button>
-                                    <button className="p-2 bg-white/90 backdrop-blur rounded-full text-slate-700 hover:text-red-500 hover:bg-white shadow-lg transition-colors flex">
-                                        <span className="material-symbols-outlined text-lg">delete</span>
-                                    </button>
+                {/* Product List Card */}
+                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
+                    {/* Filters Area */}
+                    <div className="flex flex-col gap-4 p-5 md:flex-row md:items-center border-b border-slate-100 dark:border-slate-800">
+                        <div className="relative flex-1 max-w-md">
+                            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                <span className="material-symbols-outlined text-slate-400 text-sm">search</span>
+                            </div>
+                            <input 
+                                className="block w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 py-2 pl-10 pr-3 text-sm placeholder-slate-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" 
+                                placeholder="Search product name or SKU..." 
+                                type="text"
+                            />
+                        </div>
+                        <div className="flex flex-wrap items-center gap-3">
+                            <div className="relative">
+                                <select className="appearance-none rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 py-2 pl-3 pr-10 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none cursor-pointer">
+                                    <option>Category</option>
+                                    <option>Electronics</option>
+                                    <option>Accessories</option>
+                                    <option>Apparel</option>
+                                </select>
+                                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                                    <span className="material-symbols-outlined text-slate-400 text-sm">expand_more</span>
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-1">
-                                <div className="flex items-center justify-between">
-                                    <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">{product.category}</span>
-                                    <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold ${product.statusColor}`}>
-                                        {product.status}
-                                    </span>
+                            <div className="relative">
+                                <select className="appearance-none rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 py-2 pl-3 pr-10 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none cursor-pointer">
+                                    <option>Stock Status</option>
+                                    <option>In Stock</option>
+                                    <option>Low Stock</option>
+                                    <option>Out of Stock</option>
+                                </select>
+                                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                                    <span className="material-symbols-outlined text-slate-400 text-sm">expand_more</span>
                                 </div>
-                                <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">{product.name}</h3>
-                                <p className="text-primary font-bold text-sm">{product.price}</p>
+                            </div>
+                            <div className="relative">
+                                <select className="appearance-none rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 py-2 pl-3 pr-10 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none cursor-pointer">
+                                    <option>Sort By</option>
+                                    <option>Newest First</option>
+                                    <option>Price: Low to High</option>
+                                    <option>Price: High to Low</option>
+                                    <option>Stock Level</option>
+                                </select>
+                                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                                    <span className="material-symbols-outlined text-slate-400 text-sm">swap_vert</span>
+                                </div>
                             </div>
                         </div>
-                    ))}
+                    </div>
 
-                    {/* Add New Card Skeleton */}
-                    <button
-                        onClick={() => setIsModalOpen(true)}
-                        className="flex flex-col items-center justify-center p-8 rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-primary dark:hover:border-primary hover:bg-primary/5 transition-all group"
-                    >
-                        <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-all mb-4">
-                            <span className="material-symbols-outlined text-3xl">add</span>
+                    {/* Table */}
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left text-sm whitespace-nowrap">
+                            <thead className="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 font-medium border-b border-slate-100 dark:border-slate-800">
+                                <tr>
+                                    <th className="px-6 py-4 font-semibold text-xs uppercase tracking-wider">Product</th>
+                                    <th className="px-6 py-4 font-semibold text-xs uppercase tracking-wider">SKU</th>
+                                    <th className="px-6 py-4 font-semibold text-xs uppercase tracking-wider">Category</th>
+                                    <th className="px-6 py-4 font-semibold text-xs uppercase tracking-wider">Price</th>
+                                    <th className="px-6 py-4 font-semibold text-xs uppercase tracking-wider">Stock</th>
+                                    <th className="px-6 py-4 font-semibold text-xs uppercase tracking-wider text-center">Status</th>
+                                    <th className="px-6 py-4 font-semibold text-xs uppercase tracking-wider text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                                {products.map((product) => (
+                                    <tr key={product.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                        <td className="px-6 py-4">
+                                            <div className="font-bold text-slate-900 dark:text-white">{product.name}</div>
+                                        </td>
+                                        <td className="px-6 py-4 text-slate-500 dark:text-slate-400">{product.sku}</td>
+                                        <td className="px-6 py-4">
+                                            <span className="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-400">
+                                                {product.category}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4 font-medium">{product.price}</td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex flex-col gap-1.5 min-w-[100px]">
+                                                <div className="flex items-center justify-between text-[11px] font-bold">
+                                                    <span>{product.stock} units</span>
+                                                    <span className={product.stock === 0 ? "text-red-500" : product.stock < 20 ? "text-amber-500" : "text-primary"}>
+                                                        {product.stockPercentage}%
+                                                    </span>
+                                                </div>
+                                                <div className="h-1.5 w-full rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                                                    <div 
+                                                        className={`h-full rounded-full ${product.stock === 0 ? "bg-red-500" : product.stock < 20 ? "bg-amber-500" : "bg-primary"}`} 
+                                                        style={{ width: `${product.stockPercentage}%` }}
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold ${product.statusColor}`}>
+                                                {product.status}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4 text-right">
+                                            <div className="flex justify-end gap-2">
+                                                <button 
+                                                    onClick={() => { setEditingProduct(product); setIsEditModalOpen(true); }}
+                                                    className="p-1.5 text-slate-400 hover:text-primary transition-colors focus:outline-none"
+                                                >
+                                                    <span className="material-symbols-outlined text-[20px]">edit</span>
+                                                </button>
+                                                <button className="p-1.5 text-slate-400 hover:text-red-500 transition-colors focus:outline-none">
+                                                    <span className="material-symbols-outlined text-[20px]">delete</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {/* Pagination */}
+                    <div className="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-4">
+                        <p className="text-xs text-slate-500 dark:text-slate-400">Showing 1 to {products.length} of 42 products</p>
+                        <div className="flex gap-2">
+                            <button className="flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 p-1.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50 transition-colors" disabled>
+                                <span className="material-symbols-outlined text-sm">chevron_left</span>
+                            </button>
+                            <button className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-xs font-bold text-white transition-colors">1</button>
+                            <button className="flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">2</button>
+                            <button className="flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">3</button>
+                            <button className="flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 p-1.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                <span className="material-symbols-outlined text-sm">chevron_right</span>
+                            </button>
                         </div>
-                        <p className="font-bold text-slate-500 group-hover:text-primary">Add New Product</p>
-                    </button>
-
+                    </div>
                 </div>
-            </section>
+            </div>
 
-            {/* Pagination/Footer Stats */}
-            <footer className="px-8 py-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="text-sm text-slate-500 text-center sm:text-left">Showing <span className="font-bold text-slate-900 dark:text-white">7</span> of <span className="font-bold text-slate-900 dark:text-white">124</span> products</p>
-                <div className="flex items-center justify-center gap-1 sm:gap-2 flex-wrap">
-                    <button className="p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-colors flex">
-                        <span className="material-symbols-outlined text-xl">chevron_left</span>
-                    </button>
-                    <button className="w-8 h-8 rounded-lg bg-primary text-white text-sm font-bold flex items-center justify-center">1</button>
-                    <button className="w-8 h-8 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors text-sm font-bold flex items-center justify-center">2</button>
-                    <button className="hidden sm:flex w-8 h-8 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors text-sm font-bold items-center justify-center">3</button>
-                    <span className="text-slate-400 mx-1">...</span>
-                    <button className="hidden sm:flex w-8 h-8 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors text-sm font-bold items-center justify-center">18</button>
-                    <button className="p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-colors flex">
-                        <span className="material-symbols-outlined text-xl">chevron_right</span>
-                    </button>
-                </div>
-            </footer>
             <AddProductModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -198,6 +252,6 @@ export default function ProductsPage() {
                 onClose={() => setIsEditModalOpen(false)}
                 product={editingProduct}
             />
-        </>
+        </div>
     )
 }
