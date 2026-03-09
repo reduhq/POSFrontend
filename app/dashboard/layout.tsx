@@ -1,10 +1,12 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import { useState, useRef, useEffect } from "react"
 import { AppLauncherModal } from "@/components/app-launcher-modal"
 import { MobileSearchModal } from "@/components/mobile-search-modal"
+import { logoutAction } from "@/lib/auth/actions"
+import { useAppStore } from "@/store/useAppStore"
 
 export default function DashboardLayout({
     children,
@@ -12,9 +14,30 @@ export default function DashboardLayout({
     children: React.ReactNode
 }) {
     const pathname = usePathname()
+    const router = useRouter()
+    const { user, clearAuth } = useAppStore()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isAppLauncherOpen, setIsAppLauncherOpen] = useState(false)
     const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
+    const [isProfileOpen, setIsProfileOpen] = useState(false)
+    const profileRef = useRef<HTMLDivElement>(null)
+
+    // Close profile dropdown when clicking outside
+    useEffect(() => {
+        function handleClickOutside(e: MouseEvent) {
+            if (profileRef.current && !profileRef.current.contains(e.target as Node)) {
+                setIsProfileOpen(false)
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => document.removeEventListener("mousedown", handleClickOutside)
+    }, [])
+
+    const handleLogout = async () => {
+        await logoutAction()
+        clearAuth()
+        router.push("/")
+    }
 
     return (
         <div className="flex flex-col h-screen overflow-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
@@ -65,8 +88,55 @@ export default function DashboardLayout({
                             <span className="material-symbols-outlined">notifications</span>
                             <span className="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-red-500"></span>
                         </button>
-                        <div className="ml-1 sm:ml-2 h-9 w-9 overflow-hidden rounded-full border border-slate-200 dark:border-slate-700">
-                            <img className="h-full w-full object-cover" alt="User profile avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIWJVqzso74XSryGSa3q6R_DjCfeZ0ifulGzqM0rxGDg4_C0ZUzmhQA3Zql5zAATxCT9JumV4VKvIikZTm0jOdHUIRsgpiT34X1qWTIvfVM8ykTSlvdA8S4m2uEJx__BPbGwtRrCSrx0HTpl3A7VnnH04lSdkSCjON60tCrFvoVOJGtcd7cCT_YKtEt12qWb3k61cc1_9Khpd2m4AJpfHn6A8UtvPZdYed91FNU6dDMgAAy_hrf183B_QB2DEwg0eXirDVg2eHXew"/>
+                        <div className="ml-1 sm:ml-2 relative" ref={profileRef}>
+                            <button
+                                type="button"
+                                onClick={() => setIsProfileOpen(!isProfileOpen)}
+                                className="h-9 w-9 overflow-hidden rounded-full border-2 border-slate-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+                            >
+                                <img className="h-full w-full object-cover" alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIWJVqzso74XSryGSa3q6R_DjCfeZ0ifulGzqM0rxGDg4_C0ZUzmhQA3Zql5zAATxCT9JumV4VKvIikZTm0jOdHUIRsgpiT34X1qWTIvfVM8ykTSlvdA8S4m2uEJx__BPbGwtRrCSrx0HTpl3A7VnnH04lSdkSCjON60tCrFvoVOJGtcd7cCT_YKtEt12qWb3k61cc1_9Khpd2m4AJpfHn6A8UtvPZdYed91FNU6dDMgAAy_hrf183B_QB2DEwg0eXirDVg2eHXew"/>
+                            </button>
+
+                            {/* Profile Dropdown */}
+                            {isProfileOpen && (
+                                <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-slate-900 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-800 py-2 z-[100] animate-in fade-in slide-in-from-top-2 duration-150">
+                                    {/* User Info */}
+                                    <div className="px-4 py-3 border-b border-slate-100 dark:border-slate-800">
+                                        <p className="text-sm font-bold text-slate-900 dark:text-white">{user?.name || 'User'}</p>
+                                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{user?.email || 'user@company.com'}</p>
+                                    </div>
+                                    {/* Menu Items */}
+                                    <div className="py-1">
+                                        <Link
+                                            href="/dashboard/settings"
+                                            onClick={() => setIsProfileOpen(false)}
+                                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                        >
+                                            <span className="material-symbols-outlined text-lg text-slate-400">person</span>
+                                            My Profile
+                                        </Link>
+                                        <Link
+                                            href="/dashboard/settings"
+                                            onClick={() => setIsProfileOpen(false)}
+                                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                        >
+                                            <span className="material-symbols-outlined text-lg text-slate-400">settings</span>
+                                            Settings
+                                        </Link>
+                                    </div>
+                                    {/* Logout */}
+                                    <div className="border-t border-slate-100 dark:border-slate-800 py-1">
+                                        <button
+                                            type="button"
+                                            onClick={handleLogout}
+                                            className="flex items-center gap-3 w-full px-4 py-2.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+                                        >
+                                            <span className="material-symbols-outlined text-lg">logout</span>
+                                            Sign Out
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

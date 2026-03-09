@@ -31,6 +31,5 @@ export async function loginAction(token: string, tenantId: string) {
 export async function logoutAction() {
   const cookieStore = await cookies();
   cookieStore.delete("authToken");
-  // Consider whether strictly needed to delete tenantId on logout
-  // cookieStore.delete("tenantId"); 
+  cookieStore.delete("tenantId");
 }
