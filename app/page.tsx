@@ -1,11 +1,87 @@
+"use client"
+
+import { useState, FormEvent, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
-
+import { loginAction } from "@/lib/auth/actions"
+import { useAppStore } from "@/store/useAppStore"
 import Link from "next/link"
 
 export default function LoginPage() {
+  const router = useRouter()
+  const { setTenantId: setGlobalTenantId, setUser } = useAppStore()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
+  const [tenantId, setTenantId] = useState("managua")
+
+  useEffect(() => {
+    // Extract tenant from subdomain
+    const hostname = window.location.hostname;
+    const parts = hostname.split('.');
+    
+    // If we have a subdomain like tenant.domain.com or tenant.localhost
+    if (parts.length > 2 && parts[0] !== 'www') {
+      setTenantId(parts[0]);
+    } else if (parts.length === 2 && parts[1] === 'localhost') {
+      setTenantId(parts[0]);
+    } else if (hostname === 'localhost') {
+      // Fallback for direct localhost access without subdomain
+      setTenantId('managua'); 
+    }
+  }, []);
+
+  const handleLogin = async (e: FormEvent) => {
+    e.preventDefault()
+    setIsLoading(true)
+    setError("")
+
+    try {
+      const response = await fetch("http://localhost:5168/api/Auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Tenant-Id": tenantId,
+        },
+        body: JSON.stringify({ email, password }),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null)
+        throw new Error(errorData?.message || "Login failed. Please check your credentials.")
+      }
+
+      const data = await response.json()
+      
+      if (data.token) {
+        // Set the secure cookie via Server Action
+        await loginAction(data.token, tenantId);
+        
+        // Update global store
+        setGlobalTenantId(tenantId);
+        setUser({
+          id: "1", // Ideally read from JWT payload or response
+          email: email,
+          name: "Manager", 
+          role: "Admin"
+        });
+        
+        // Redirect to dashboard (middleware will allow it now)
+        router.push("/dashboard/products")
+      } else {
+        throw new Error("Invalid response from server.")
+      }
+    } catch (err: any) {
+      setError(err.message)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <div className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
       <div className="relative flex min-h-screen w-full flex-col items-center justify-center p-4">
@@ -26,7 +102,13 @@ export default function LoginPage() {
             <p className="text-slate-500 dark:text-slate-400 text-sm">Please enter your details to access your dashboard.</p>
           </div>
 
-          <form className="space-y-6">
+          {error && (
+            <div className="mb-6 p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm">
+              {error}
+            </div>
+          )}
+
+          <form className="space-y-6" onSubmit={handleLogin}>
             {/* Email Field */}
             <div className="space-y-2">
               <Label htmlFor="email" className="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">
@@ -38,8 +120,11 @@ export default function LoginPage() {
                   id="email"
                   name="email"
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@company.com"
                   className="w-full pl-12 pr-4 py-6 rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus-visible:ring-primary/20 focus-visible:border-primary transition-all placeholder:text-slate-400"
+                  required
                 />
               </div>
             </div>
@@ -60,8 +145,11 @@ export default function LoginPage() {
                   id="password"
                   name="password"
                   type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   className="w-full pl-12 pr-12 py-6 rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus-visible:ring-primary/20 focus-visible:border-primary transition-all placeholder:text-slate-400"
+                  required
                 />
                 <button type="button" className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors z-10">
                   <span className="material-symbols-outlined text-xl">visibility</span>
@@ -78,9 +166,13 @@ export default function LoginPage() {
             </div>
 
             {/* Sign In Button */}
-            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-bold h-14 rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group text-base">
-              <span>Sign In to Dashboard</span>
-              <span className="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
+            <Button 
+              type="submit" 
+              disabled={isLoading}
+              className="w-full bg-primary hover:bg-primary/90 text-white font-bold h-14 rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group text-base"
+            >
+              <span>{isLoading ? "Signing in..." : "Sign In to Dashboard"}</span>
+              {!isLoading && <span className="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>}
             </Button>
           </form>
 
